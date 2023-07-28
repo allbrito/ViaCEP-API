@@ -1,5 +1,22 @@
+import com.allan.viacep.api.requisicao.ConsultaCep;
+import com.allan.viacep.api.modelo.Endereco;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Scanner sc = new Scanner(System.in);
+
+        ConsultaCep consultaCep = new ConsultaCep();
+
+        System.out.println("Digite um número de CEP para a busca: ");
+        var cep = sc.nextLine();
+
+        try{
+            Endereco endereco = consultaCep.buscaEndereco(cep);
+            System.out.println(endereco);
+        } catch(RuntimeException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }
