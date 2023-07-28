@@ -11,7 +11,7 @@ import java.net.http.HttpResponse;
 public class ConsultaCep {
 
     public Endereco buscaEndereco(String cep){
-        var endereco = URI.create("https://viacep.com.br/ws/"+cep+"/json");
+        var endereco = URI.create("https://viacep.com.br/ws/" +cep+ "/json");
 
         var request = HttpRequest.newBuilder()
                 .uri(endereco)

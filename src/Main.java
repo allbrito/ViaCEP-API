@@ -1,6 +1,8 @@
+import com.allan.viacep.api.arquivo.GeradorArquivo;
 import com.allan.viacep.api.requisicao.ConsultaCep;
 import com.allan.viacep.api.modelo.Endereco;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -15,7 +17,9 @@ public class Main {
         try{
             Endereco endereco = consultaCep.buscaEndereco(cep);
             System.out.println(endereco);
-        } catch(RuntimeException ex) {
+            GeradorArquivo geradorArquivo = new GeradorArquivo();
+            geradorArquivo.salvarJson(endereco);
+        } catch(RuntimeException | IOException ex) {
             System.out.println(ex.getMessage());
         }
     }
