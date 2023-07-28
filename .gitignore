@@ -30,3 +30,5 @@ bin/
 /.idea/misc.xml
 /.idea/modules.xml
 /ViaCEP-API.iml
+/.idea/uiDesigner.xml
+/.idea/vcs.xml
